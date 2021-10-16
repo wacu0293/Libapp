@@ -32,5 +32,11 @@ namespace LibApp.Controllers
             }
             return Content($"pageindex={pageIndex}&sortBy={sortBy}");
         }
+
+        public IActionResult ByRelesedate(int year, int month)
+        {
+            return Content(year + "/" + month);
+        }
+
     }
 }
