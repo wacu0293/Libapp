@@ -15,5 +15,22 @@ namespace LibApp.Controllers
             var firstBook = new Book() { Name = "Englih dictionary " };
             return View(firstBook);
         }
+        public IActionResult Edit(int id)
+        {
+            return Content("id" + id);
+        }
+        public IActionResult Index(int? pageIndex, string sortBy)
+        {
+            if (!pageIndex.HasValue)
+            {
+                pageIndex = 1;
+
+            }
+            if (String.IsNullOrEmpty(sortBy))
+            {
+                sortBy = "Name";
+            }
+            return Content($"pageindex={pageIndex}&sortBy={sortBy}");
+        }
     }
 }
